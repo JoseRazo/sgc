@@ -7,14 +7,11 @@
 </div>
 
 ## Instalación
-<p>Clonar o descargar el repositorio</p>
-<div class="alert alert-secondary" role="alert">
-  git clone https://github.com/JoseRazo/sgc.git
-</div>
+- Clonar repositorio `git clone https://github.com/JoseRazo/sgc.git`
+- Abrir proyecto con terminal `~/Developer/angular/sgc (main) $`
+- Ejecutar comando **`npm install`**
+- Instalar Angular CLI con el comando **`npm install -g @angular/cli`**
+- Ejecutar comando para correr servidor **`ng serve`**
 
-<p>Abrir la consola y entrar a la carpeta del proyecto y ejecutar los comandos</p>
-<div class="alert alert-secondary" role="alert">
-  npm install
-  Instalar Angular CLI con el comando npm install -g @angular/cli
-  ng serve
-</div>
+## Abrir proyecto
+Abrir navegador y entrar a URL [127.0.0.1:4200](http://127.0.0.1:4200)
