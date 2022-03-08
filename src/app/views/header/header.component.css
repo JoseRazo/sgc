@@ -1,0 +1,46 @@
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: 15px;
+}
+.header {
+    background-color: #002052;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 189px;
+}
+
+@media screen and (max-width: 1200px) {
+    .img-responsive {
+        max-width: 160px;
+    }
+    .navbar-brand.navbar-bg {
+        height: 124px;
+  }
+    
+  }
+
+  @media screen and (max-width: 992px) {
+    .img-responsive {
+        max-width: 116px;
+        padding-top: 20px;
+    }
+    .navbar-brand.navbar-bg {
+        height: 124px;
+  }
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    .img-responsive {
+        max-width: 130px;
+        padding-top: 0px;
+    }
+    .navbar-brand.navbar-bg {
+        height: 76px;
+  }
+}
+
+.active-link {
+    color: #009f7b;
+}

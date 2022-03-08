@@ -1,0 +1,9 @@
+.news-see-more .btn.btn-primary{
+	color: #fff;
+	margin: 5px 0 0 15px;
+	padding: 8px 25px;
+}
+
+.news-see-more .btn.btn-primary:hover{
+	color: #333;
+}

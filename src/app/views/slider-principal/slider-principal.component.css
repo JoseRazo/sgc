@@ -1,0 +1,16 @@
+@media screen and (max-width: 1455px) {
+    section{
+        padding: 128px 0;
+        position: relative;
+    }
+    
+  }
+
+  @media screen and (max-width: 767px) {
+    section{
+        padding: 56px 0;
+        position: relative;
+    }
+    
+  }
+
