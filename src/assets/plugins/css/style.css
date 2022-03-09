@@ -1603,7 +1603,19 @@ figure.effect-oscar h3 {
 	font-size: 18px;
 	color: #fff;
 	opacity: 0;
-	margin: 25% 0 10px 0;
+	/*margin: 25% 0 10px 0;*/
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+figure.effect-oscar h6 {
+	font-size: 15px;
+	color: #fff;
+	opacity: 0;
+	font-family: 'Intro Book', sans-serif;
+	text-transform: none;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,100%,0);
@@ -1645,6 +1657,7 @@ figure.effect-oscar:hover h3 {
 
 figure.effect-oscar:hover figcaption::before,
 figure.effect-oscar:hover h3,
+figure.effect-oscar:hover h6,
 figure.effect-oscar:hover a {
 	opacity: 1;
 	-webkit-transform: scale(1);
