@@ -23,6 +23,7 @@ import { CulturaDeLaCalidadComponent } from './articles/gestion-de-la-calidad/cu
 import { MejoraContinuaComponent } from './articles/gestion-de-la-calidad/mejora-continua/mejora-continua.component';
 import { AcreditacionInstitucionalComponent } from './articles/aseguramiento-de-la-calidad/acreditacion-institucional/acreditacion-institucional.component';
 import { AcreditacionCertificacionPregradoComponent } from './articles/aseguramiento-de-la-calidad/acreditacion-certificacion-pregrado/acreditacion-certificacion-pregrado.component';
+import { DocumentosComponent } from './articles/documentos/documentos.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AcreditacionCertificacionPregradoComponent } from './articles/asegurami
     CulturaDeLaCalidadComponent,
     MejoraContinuaComponent,
     AcreditacionInstitucionalComponent,
-    AcreditacionCertificacionPregradoComponent
+    AcreditacionCertificacionPregradoComponent,
+    DocumentosComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,11 @@ import { AcreditacionCertificacionPregradoComponent } from './articles/asegurami
       {
         path: 'politica-de-la-calidad',
         component: PoliticaDeLaCalidadComponent
+      },
+      //DOCTOS
+      {
+        path: 'documentos',
+        component: DocumentosComponent
       },
       {
         path: '404',
