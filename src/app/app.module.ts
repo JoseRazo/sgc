@@ -25,6 +25,7 @@ import { AcreditacionInstitucionalComponent } from './articles/aseguramiento-de-
 import { AcreditacionCertificacionPregradoComponent } from './articles/aseguramiento-de-la-calidad/acreditacion-certificacion-pregrado/acreditacion-certificacion-pregrado.component';
 import { DocumentosComponent } from './articles/documentos/documentos.component';
 import { MapaComponent } from './articles/gestion-de-la-calidad/mapa/mapa.component';
+import { ContactoComponent } from './articles/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MapaComponent } from './articles/gestion-de-la-calidad/mapa/mapa.compon
     AcreditacionInstitucionalComponent,
     AcreditacionCertificacionPregradoComponent,
     DocumentosComponent,
-    MapaComponent
+    MapaComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +90,12 @@ import { MapaComponent } from './articles/gestion-de-la-calidad/mapa/mapa.compon
        {
         path: 'mapa',
         component: MapaComponent
+      },
+
+       //Contacto
+       {
+        path: 'contacto',
+        component: ContactoComponent
       },
       {
         path: '404',
