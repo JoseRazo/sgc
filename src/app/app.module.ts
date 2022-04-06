@@ -26,6 +26,8 @@ import { AcreditacionCertificacionPregradoComponent } from './articles/asegurami
 import { DocumentosComponent } from './articles/documentos/documentos.component';
 import { MapaComponent } from './articles/gestion-de-la-calidad/mapa/mapa.component';
 import { ContactoComponent } from './articles/contacto/contacto.component';
+import { RevisionesComponent } from './articles/gestion-de-la-calidad/revisiones/revisiones.component';
+import { AlcanceComponent } from './articles/gestion-de-la-calidad/alcance/alcance.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ContactoComponent } from './articles/contacto/contacto.component';
     AcreditacionCertificacionPregradoComponent,
     DocumentosComponent,
     MapaComponent,
-    ContactoComponent
+    ContactoComponent,
+    RevisionesComponent,
+    AlcanceComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +100,18 @@ import { ContactoComponent } from './articles/contacto/contacto.component';
        {
         path: 'contacto',
         component: ContactoComponent
+      },
+
+      //Revisiones
+      {
+        path: 'revisiones',
+        component: RevisionesComponent
+      },
+
+       //Alcance
+       {
+        path: 'alcance',
+        component: AlcanceComponent
       },
       {
         path: '404',
