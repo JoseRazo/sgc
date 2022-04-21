@@ -7,7 +7,7 @@
 .img-responsive {
     display: block;
     height: auto;
-    max-width: 189px;
+    max-width: 100px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -33,11 +33,11 @@
 
   @media screen and (max-width: 768px) {
     .img-responsive {
-        max-width: 130px;
+        max-width:90px;
         padding-top: 0px;
     }
     .navbar-brand.navbar-bg {
-        height: 76px;
+        height: 51px;
   }
 }
 

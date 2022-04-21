@@ -23,6 +23,11 @@ import { CulturaDeLaCalidadComponent } from './articles/gestion-de-la-calidad/cu
 import { MejoraContinuaComponent } from './articles/gestion-de-la-calidad/mejora-continua/mejora-continua.component';
 import { AcreditacionInstitucionalComponent } from './articles/aseguramiento-de-la-calidad/acreditacion-institucional/acreditacion-institucional.component';
 import { AcreditacionCertificacionPregradoComponent } from './articles/aseguramiento-de-la-calidad/acreditacion-certificacion-pregrado/acreditacion-certificacion-pregrado.component';
+import { DocumentosComponent } from './articles/documentos/documentos.component';
+import { MapaComponent } from './articles/gestion-de-la-calidad/mapa/mapa.component';
+import { ContactoComponent } from './articles/contacto/contacto.component';
+import { RevisionesComponent } from './articles/gestion-de-la-calidad/revisiones/revisiones.component';
+import { AlcanceComponent } from './articles/gestion-de-la-calidad/alcance/alcance.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,12 @@ import { AcreditacionCertificacionPregradoComponent } from './articles/asegurami
     CulturaDeLaCalidadComponent,
     MejoraContinuaComponent,
     AcreditacionInstitucionalComponent,
-    AcreditacionCertificacionPregradoComponent
+    AcreditacionCertificacionPregradoComponent,
+    DocumentosComponent,
+    MapaComponent,
+    ContactoComponent,
+    RevisionesComponent,
+    AlcanceComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +83,35 @@ import { AcreditacionCertificacionPregradoComponent } from './articles/asegurami
       {
         path: 'politica-de-la-calidad',
         component: PoliticaDeLaCalidadComponent
+      },
+      //DOCTOS
+      {
+        path: 'documentos',
+        component: DocumentosComponent
+      },
+
+       //MAPA
+       {
+        path: 'mapa',
+        component: MapaComponent
+      },
+
+       //Contacto
+       {
+        path: 'contacto',
+        component: ContactoComponent
+      },
+
+      //Revisiones
+      {
+        path: 'revisiones',
+        component: RevisionesComponent
+      },
+
+       //Alcance
+       {
+        path: 'alcance',
+        component: AlcanceComponent
       },
       {
         path: '404',

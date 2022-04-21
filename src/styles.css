@@ -26,3 +26,10 @@
 .text-justify {
     text-align: justify !important;
 }
+
+ .img-fluid {
+
+
+ max-width: 100%;
+height: auto;
+}
