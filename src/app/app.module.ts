@@ -113,6 +113,12 @@ import { AlcanceComponent } from './articles/gestion-de-la-calidad/alcance/alcan
         path: 'alcance',
         component: AlcanceComponent
       },
+
+       //Acreditación
+       {
+        path: 'acreditacion-institucional',
+        component: AcreditacionInstitucionalComponent
+      },
       {
         path: '404',
         component: NotFoundComponent
