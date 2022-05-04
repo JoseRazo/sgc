@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ComoLoHacemosComponent implements OnInit {
 
-  title = 'SGC | CÓMO LO HACEMOS';
+  title = 'SGC | ¿CÓMO LO HACEMOS?';
 
   constructor(private titleService: Title) { 
     this.loadScripts();
