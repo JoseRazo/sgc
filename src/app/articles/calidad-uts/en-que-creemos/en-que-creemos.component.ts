@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./en-que-creemos.component.css']
 })
 export class EnQueCreemosComponent implements OnInit {
-  title = 'SGC | EN QUÉ CREEMOS';
+  title = 'SGC | ¿EN QUÉ CREEMOS?';
 
   constructor(private titleService: Title) { 
     this.loadScripts();

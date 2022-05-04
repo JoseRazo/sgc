@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class QuienesSomosComponent implements OnInit {
 
-  title = 'SGC | QUIÉNES SOMOS';
+  title = 'SGC | ¿QUIÉNES SOMOS?';
 
   constructor(private titleService: Title) { 
     this.loadScripts();
