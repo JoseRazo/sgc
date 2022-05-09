@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AcreditacionInstitucionalComponent implements OnInit {
 
-  title = 'SGC | ACREDITACIÓN INSTITUCIONAL';
+  title = 'SGC | PROGRAMAS ACADÉMICOS';
 
   constructor(private titleService: Title) { 
     this.loadScripts();
