@@ -119,6 +119,12 @@ import { AlcanceComponent } from './articles/gestion-de-la-calidad/alcance/alcan
         path: 'acreditacion-institucional',
         component: AcreditacionInstitucionalComponent
       },
+
+      //NOM 025
+      {
+        path: 'acreditacion-certificacion-pregrado',
+        component: AcreditacionCertificacionPregradoComponent
+      },
       {
         path: '404',
         component: NotFoundComponent
