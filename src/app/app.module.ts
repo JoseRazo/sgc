@@ -30,6 +30,12 @@ import { RevisionesComponent } from './articles/gestion-de-la-calidad/revisiones
 import { AlcanceComponent } from './articles/gestion-de-la-calidad/alcance/alcance.component';
 import { LoginComponent } from './login/login.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +68,11 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
     RouterModule.forRoot([
       //HOME
       {
@@ -89,7 +100,8 @@ import { LoginComponent } from './login/login.component';
       //DOCTOS
       {
         path: 'documentos',
-        component: DocumentosComponent
+        component: DocumentosComponent,
+        canActivate: [AuthGuard]
       },
 
        //MAPA

@@ -22,15 +22,30 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 col-md-offset-3">
                 <div class="plan">
-                    <form id="contact-form" action="" method="post" role="form">
+                    <div *ngIf="showErrorMessage" class="p-3 mb-5 bg-danger text-white">
+                        El nombre de usuario o contraseña son incorrectos.
+                    </div>
+                    <form (ngSubmit)="submit()" [formGroup]="form">
                         <div class="form-group">
                             <label>Nombre de Usuario</label>
-                            <input class="form-control" name="login" id="login" placeholder="" type="text" required="">
+                            <input class="form-control" formControlName="login" name="login" id="login" placeholder=""
+                                type="text" [ngClass]="{'is-invalid' : submitted && f.login.errors}">
+                            <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                                <div *ngIf="f.login.errors.required">
+                                    El campo nombre de usuario es requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input class="form-control" name="password" id="password" placeholder="" type="password"
-                                required="">
+                            <input class="form-control" formControlName="password" name="password" id="password"
+                                placeholder="" type="password"
+                                [ngClass]="{'is-invalid' : submitted && f.password.errors}">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">
+                                    El campo contraseña es requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="text-right"><br>
                             <button class="btn btn-primary solid blank" type="submit">Iniciar Sesión</button>
@@ -41,7 +56,6 @@
             <!--/ Team 4 end -->
         </div>
         <!--/ Content row end -->
-
 
         <div class="gap-40"></div>
 

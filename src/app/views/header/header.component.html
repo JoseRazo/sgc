@@ -87,6 +87,7 @@
                                 class="fa fa-angle-down"></i></a>
                     </li> -->
                     <li><a routerLink="/contacto">Contáctanos</a></li>
+                    <li><a (click)="logout()" *ngIf="isLoggedIn()">Cerrar Sesión</a></li>
                 </ul>
             </nav>
             <!--/ Navigation end -->
