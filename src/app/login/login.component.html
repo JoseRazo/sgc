@@ -21,7 +21,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12 col-md-offset-3">
-                <div class="plan">
+                <img src ="assets/images/sito.png"  alt="" />
+             <div class="plan">
                     <div *ngIf="showErrorMessage" class="p-3 mb-5 bg-danger text-white">
                         El nombre de usuario o contraseña son incorrectos.
                     </div>
@@ -37,6 +38,7 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            
                             <label>Contraseña</label>
                             <input class="form-control" formControlName="password" name="password" id="password"
                                 placeholder="" type="password"
