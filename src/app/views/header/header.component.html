@@ -30,9 +30,12 @@
                                 class="fa fa-angle-down"></i></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a routerLink="/en-que-creemos" routerLinkActive="active-link">¿En qué Creemos?</a></li>
-                                <li><a routerLink="/como-lo-hacemos" routerLinkActive="active-link">¿Cómo lo Hacemos?</a></li>
-                                <li><a routerLink="/quienes-somos" routerLinkActive="active-link">¿Quiénes Somos?</a></li>
+                                <li><a routerLink="/en-que-creemos" routerLinkActive="active-link">¿En qué Creemos?</a>
+                                </li>
+                                <li><a routerLink="/como-lo-hacemos" routerLinkActive="active-link">¿Cómo lo
+                                        Hacemos?</a></li>
+                                <li><a routerLink="/quienes-somos" routerLinkActive="active-link">¿Quiénes Somos?</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -41,12 +44,14 @@
                                 class="fa fa-angle-down"></i></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a routerLink="/politica-de-la-calidad" routerLinkActive="active-link">Política de Calidad</a></li>
+                                <li><a routerLink="/politica-de-la-calidad" routerLinkActive="active-link">Política de
+                                        Calidad</a></li>
                                 <li><a routerLink="/alcance" routerLinkActive="active-link">Alcance</a></li>
                                 <li><a routerLink="/mapa" routerLinkActive="active-link">Mapa de Procesos</a></li>
                                 <li><a routerLink="/documentos" routerLinkActive="active-link">Documentos</a></li>
-                                <li><a routerLink="/revisiones" routerLinkActive="active-link">Revisiones por la Rectoría</a></li>
-                               <!---- <li><a href="#">Reglamento</a></li>
+                                <li><a routerLink="/revisiones" routerLinkActive="active-link">Revisiones por la
+                                        Rectoría</a></li>
+                                <!---- <li><a href="#">Reglamento</a></li>
                                 <li><a href="#">Consejo General de Calidad</a></li>
                                 <li><a href="#">Consejos de Calidad de Unidades</a></li>
                                 <li><a href="#">Gestión por Procesos</a></li>
@@ -60,8 +65,10 @@
                                 class="fa fa-angle-down"></i></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a routerLink="/acreditacion-institucional" routerLinkActive="active-link">Programas Académicos</a></li>
-                                <li><a routerLink="/acreditacion-certificacion-pregrado" routerLinkActive="active-link">NMX-R-025-SCFI-2015</a></li>
+                                <li><a routerLink="/acreditacion-institucional" routerLinkActive="active-link">Programas
+                                        Académicos</a></li>
+                                <li><a routerLink="/acreditacion-certificacion-pregrado"
+                                        routerLinkActive="active-link">NMX-R-025-SCFI-2015</a></li>
                                 <!-- <li><a href="#">Acreditación Postgrado</a></li>
                                 <li><a href="#">Acreditación Internacional</a></li>
                                 <li><a href="#">Materiales de Acreditación</a></li>
@@ -69,7 +76,7 @@
                             </ul>
                         </div>
                     </li>
-                  <!----  <li class="dropdown">
+                    <!----  <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyectos de Mejora <i
                                 class="fa fa-angle-down"></i></a>
                         <div class="dropdown-menu">
@@ -82,12 +89,13 @@
                             </ul>
                         </div>
                     </li>-->
-                   <!---- <li class="dropdown">
+                    <!---- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesos de Cambio <i
                                 class="fa fa-angle-down"></i></a>
                     </li> -->
                     <li><a routerLink="/contacto">Contáctanos</a></li>
-                    <li><a (click)="logout()" *ngIf="isLoggedIn()">Cerrar Sesión</a></li>
+                    <li><a (click)="logout()" *ngIf="isLoggedIn()" style="cursor: pointer;"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                            Cerrar Sesión</a></li>
                 </ul>
             </nav>
             <!--/ Navigation end -->

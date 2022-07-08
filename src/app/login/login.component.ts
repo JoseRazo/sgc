@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import { Toast, ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  title = 'SGC | INICIAR SESIÓN';
   form: FormGroup;
   submitted = false;
   data: any;
@@ -17,7 +19,24 @@ export class LoginComponent implements OnInit {
   showErrorMessage = false;
 
   constructor(private dataService: DataService, private toastr: ToastrService,
-    private formBuilder: FormBuilder, private router: Router) { }
+    private formBuilder: FormBuilder, private router: Router, private titleService: Title) {
+    this.loadScripts();
+  }
+
+  loadScripts() {
+    const dynamicScripts = [
+      '../assets/plugins/js/custom.js'
+    ];
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('script');
+      node.src = dynamicScripts[i];
+      node.type = 'text/javascript';
+      node.async = false;
+      node.charset = 'utf-8';
+      document.getElementsByTagName('head')[0].appendChild(node);
+    }
+
+  }
 
   loginForm() {
     this.form = this.formBuilder.group({
@@ -28,6 +47,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm();
+    this.titleService.setTitle(this.title);
   }
 
   get f() {
@@ -42,7 +62,7 @@ export class LoginComponent implements OnInit {
     }
     this.dataService.loginUser(this.form.value).subscribe(res => {
       this.data = res;
-      if (this.data.status === 1) {
+      if (this.data.success === true) {
         this.token = this.data.data.token;
         localStorage.setItem('token', this.token);
         this.router.navigate(['/documentos']);
@@ -51,7 +71,7 @@ export class LoginComponent implements OnInit {
           timeOut: 2000,
           progressBar: true,
         });
-      } else if (this.data.status === 0) {
+      } else if (this.data.success === false) {
         this.toastr.success(JSON.stringify(this.data.message),
           JSON.stringify(this.data.code), {
           timeOut: 3000,
@@ -68,7 +88,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  isLoggedIn() : boolean {  
+  isLoggedIn(): boolean {
     return localStorage.getItem('token') !== null;
   }
 
