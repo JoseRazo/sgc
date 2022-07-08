@@ -35,6 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
+import { CertificacionesIsoComponent } from './articles/certificaciones-acreditaciones/certificaciones-iso/certificaciones-iso.component';
+import { CentroCertificadorComponent } from './articles/certificaciones-acreditaciones/centro-certificador/centro-certificador.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { AuthGuard } from './auth.guard';
     ContactoComponent,
     RevisionesComponent,
     AlcanceComponent,
-    LoginComponent
+    LoginComponent,
+    CertificacionesIsoComponent,
+    CentroCertificadorComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,14 +108,14 @@ import { AuthGuard } from './auth.guard';
         canActivate: [AuthGuard]
       },
 
-       //MAPA
-       {
+      //MAPA
+      {
         path: 'mapa',
         component: MapaComponent
       },
 
-       //Contacto
-       {
+      //Contacto
+      {
         path: 'contacto',
         component: ContactoComponent
       },
@@ -122,22 +126,35 @@ import { AuthGuard } from './auth.guard';
         component: RevisionesComponent
       },
 
-       //Alcance
-       {
+      //Alcance
+      {
         path: 'alcance',
         component: AlcanceComponent
       },
 
-       //Acreditación
-       {
+      //CERTIFICACIONES Y ACREDITACIONES
+      //Acreditación
+      {
         path: 'acreditacion-institucional',
         component: AcreditacionInstitucionalComponent
       },
 
-      //NOM 025
+      //Norma mexicana NMX
       {
         path: 'acreditacion-certificacion-pregrado',
         component: AcreditacionCertificacionPregradoComponent
+      },
+
+      //Certificaciones ISO
+      {
+        path: 'certificaciones-iso',
+        component: CertificacionesIsoComponent
+      },
+
+      //Centro certificador
+      {
+        path: 'centro-certificador',
+        component: CentroCertificadorComponent
       },
 
       //LOGIN
@@ -145,7 +162,7 @@ import { AuthGuard } from './auth.guard';
         path: "login",
         component: LoginComponent
       },
-      
+
       {
         path: '404',
         component: NotFoundComponent
