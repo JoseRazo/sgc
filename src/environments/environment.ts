@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://www.utsalamanca.edu.mx/auth'
+  apiUrl: 'https://www.utsalamanca.edu.mx/auth'
 };
 
 /*
