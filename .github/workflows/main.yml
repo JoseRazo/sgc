@@ -26,14 +26,9 @@ jobs:
     - run: ng build --prod
 
     - name: Deploy to Server
-      uses: appleboy/ssh-action@master
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        server: 187.217.225.35
+        username: root
+        password: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: |
-          cd /var/www/apps/sgc
-          rm -rf *
-          scp -r $GITHUB_WORKSPACE/dist/* .
-          # Optionally, restart Nginx or your web server here
