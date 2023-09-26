@@ -30,3 +30,7 @@ jobs:
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+    - name: Copy Files to Server
+      run: |
+        scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./dist/uts/* root@187.217.225.35:/var/www/apps/sgc/
