@@ -33,4 +33,8 @@ jobs:
 
     - name: Copy Files to Server
       run: |
+<<<<<<< HEAD:.github/workflows/deploy.yml
         scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r $GITHUB_WORKSPACE/dist/sgc/* ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }}:/var/www/apps/sgc/
+=======
+        scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r $GITHUB_WORKSPACE/dist/sgc/* ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }}:/var/www/apps/sgc/
+>>>>>>> f499c264b928431155ebe1c0db7f024a7b7cc582:.github/workflows/main.yml
