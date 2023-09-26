@@ -33,4 +33,13 @@ jobs:
 
     - name: Copy Files to Server
       run: |
+        # Navega un nivel hacia arriba en la estructura de directorios
+        cd ..
+    
+        # Ahora estás en el directorio root del servidor
+    
+        # Luego, ingresa a la ruta donde están las carpetas
+        cd /var/www/apps/sgc/
+    
+        # Luego, puedes ejecutar el comando scp para copiar los archivos
         scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./dist/uts/* root@187.217.225.35:/var/www/apps/sgc/
