@@ -45,4 +45,4 @@ jobs:
         script: |
           cd /var/www/apps/sgc
           rm -rf *
-          scp -r $GITHUB_WORKSPACE/dist/* .
+          scp -r $GITHUB_WORKSPACE/dist/sgc/* .
