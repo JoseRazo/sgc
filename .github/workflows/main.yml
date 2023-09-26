@@ -25,10 +25,11 @@ jobs:
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build --prod
 
-    - name: Deploy to Server
+    - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: 187.217.225.35
-        username: root
-        password: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist
+        remote-dir: /var/www/apps/sgc
