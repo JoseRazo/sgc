@@ -37,6 +37,10 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
+    - name: Remove Files (except assets)
+        run: |
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }} 'cd /var/www/apps/sgc/ && find . ! -name assets -type f -exec rm -f {} +'
+
     - name: Copy Files to Server
       run: |
         scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r $GITHUB_WORKSPACE/dist/sgc/* ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }}:/var/www/apps/sgc/
