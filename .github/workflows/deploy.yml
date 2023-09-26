@@ -39,4 +39,4 @@ jobs:
 
     - name: Sync Files to Server
       run: |
-        rsync -av --delete -e 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' $GITHUB_WORKSPACE/dist/sgc/ ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }}:/var/www/apps/sgc/
+        rsync -av --delete --exclude='.htaccess' -e 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' $GITHUB_WORKSPACE/dist/sgc/ ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }}:/var/www/apps/sgc/
