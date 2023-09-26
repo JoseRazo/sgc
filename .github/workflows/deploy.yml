@@ -37,9 +37,9 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
-    - name: Remove Files (except assets)
+    - name: Remove Files (containing "main" in the name)
       run: |
-        ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }} 'cd /var/www/apps/sgc/ && find . ! -name assets -type f -exec rm -f {} +'
+        ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.FTP_USERNAME }}@${{ secrets.KNOWN_HOSTS }} 'cd /var/www/apps/sgc/ && find . -type f -name "*main*" -exec rm -f {} +'
 
     - name: Copy Files to Server
       run: |
