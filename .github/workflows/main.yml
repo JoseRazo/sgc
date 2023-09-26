@@ -28,10 +28,10 @@ jobs:
     - name: copy file via ssh key
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: 22
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        ftp-port: 22
         source: "./dist/sgc/"
         target: "/var/www/apps/sgc/"
         strip_components: 3
