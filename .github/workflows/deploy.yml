@@ -24,8 +24,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - run: npm install
-    - run: npm install -g @angular/cli > /dev/null
+    - run: npm cache clean --force && npm install --legacy-peer-deps
+    - run: npm install -g @angular/cli@11 > /dev/null
     - run: ng build --prod
 
     - name: Install SSH Key
