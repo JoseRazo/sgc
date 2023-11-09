@@ -1,18 +1,20 @@
 FROM node:14.20.1-alpine as build-step
 
-# setup workspace
+# Setup workspace
 RUN mkdir -p /home/app
 WORKDIR /home/app
 
-# install angular
-RUN npm install -g @angular/cli
+# Install Angular CLI
+RUN npm install -g @angular/cli@11
 
-# copy dependency files
+# Copy dependency files
 COPY package.json /home/app/package.json
 
-# install dependencies
-RUN npm install
+# Install dependencies
+RUN npm cache clean --force && npm install --legacy-peer-deps
 
-# RUN server
+# Expose port
 EXPOSE 4200
+
+# Run the Angular development server
 CMD ["ng", "serve", "--host", "0.0.0.0", "--poll=2000", "--port", "4200", "--disable-host-check"]
