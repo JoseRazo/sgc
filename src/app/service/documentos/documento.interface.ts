@@ -6,6 +6,7 @@ export interface Documento {
   archivo: string;
   departamento: number;
   categoria: number;
+  categoria_nombre: string;
   fecha: string | null;
 }
 
