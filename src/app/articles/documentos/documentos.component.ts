@@ -46,4 +46,10 @@ export class DocumentosComponent implements OnInit {
       document.getElementsByTagName("head")[0].appendChild(node);
     }
   }
+
+  getCategorias(documentos: Documento[]): any[] {
+    const categorias = documentos.map(doc => doc.categoria_nombre);
+    return categorias.filter((value, index, self) => self.indexOf(value) === index)
+      .map((categoria, index) => ({ id: index + 1, nombre: categoria }));
+  }
 }

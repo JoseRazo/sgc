@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 import { CertificacionesIsoComponent } from './articles/certificaciones-acreditaciones/certificaciones-iso/certificaciones-iso.component';
 import { CentroCertificadorComponent } from './articles/certificaciones-acreditaciones/centro-certificador/centro-certificador.component';
+import { FilterByCategoriaPipe } from './service/documentos/filter-by-categoria.pipe';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { CentroCertificadorComponent } from './articles/certificaciones-acredita
     LoginComponent,
     CertificacionesIsoComponent,
     CentroCertificadorComponent,
+    FilterByCategoriaPipe,
   ],
   imports: [
     BrowserModule,
@@ -175,6 +177,6 @@ import { CentroCertificadorComponent } from './articles/certificaciones-acredita
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [NotFoundComponent]
+  exports: [NotFoundComponent, FilterByCategoriaPipe]
 })
 export class AppModule { }
