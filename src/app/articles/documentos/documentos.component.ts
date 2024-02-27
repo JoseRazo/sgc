@@ -74,4 +74,9 @@ export class DocumentosComponent implements OnInit {
   getCategoriaNombre(categoriaId: number) {
     // Lógica para obtener el nombre de la categoría según el ID
   }
+
+  // Función para generar identificador sin espacios
+  generateId(str: string): string {
+    return str.replace(/\s+/g, "_"); // Reemplaza espacios por guiones bajos
+  }
 }
