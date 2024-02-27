@@ -29,12 +29,12 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" class="collapsed" data-parent="#accordion"
-                  [href]="'#collapse' + categoriaDocumento.categoria">
+                  [href]="'#collapse' + departamento.departamento + categoriaDocumento.categoria">
                   {{ categoriaDocumento.categoria }}
                 </a>
               </h4>
             </div>
-            <div [id]="'collapse' + categoriaDocumento.categoria" class="panel-collapse collapse">
+            <div [id]="'collapse' + departamento.departamento + categoriaDocumento.categoria" class="panel-collapse collapse">
               <div class="panel-body">
                 <table class="table">
                   <thead class="thead-dark">
