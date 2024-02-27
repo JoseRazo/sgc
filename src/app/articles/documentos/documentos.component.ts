@@ -1,10 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { DocumentoService } from "src/app/service/documentos/documento.service";
-import {
-  Documento,
-  Departamento,
-} from "src/app/service/documentos/documento.interface";
+import { Documento, Departamento } from "src/app/service/documentos/documento.interface";
+
+interface DocumentoPorCategoria {
+  categoria: string;
+  documentos: Documento[];
+}
 
 @Component({
   selector: "app-documentos",
@@ -14,6 +16,7 @@ import {
 export class DocumentosComponent implements OnInit {
   title = "SGC | DOCUMENTOS";
   departamentos: Departamento[] = [];
+  documentosPorDepartamento: { departamento: string, documentosPorCategoria: DocumentoPorCategoria[] }[] = [];
 
   constructor(
     private titleService: Title,
@@ -26,8 +29,8 @@ export class DocumentosComponent implements OnInit {
     this.titleService.setTitle(this.title);
     this.documentoService.getDepartamentos().subscribe(
       (data) => {
-        console.log(data);
         this.departamentos = data;
+        this.documentosPorDepartamento = this.agruparDocumentosPorDepartamento(data);
       },
       (error) => {
         console.log("Error al obtener datos: ", error);
@@ -47,9 +50,28 @@ export class DocumentosComponent implements OnInit {
     }
   }
 
-  getCategorias(documentos: Documento[]): any[] {
-    const categorias = documentos.map(doc => doc.categoria_nombre);
-    return categorias.filter((value, index, self) => self.indexOf(value) === index)
-      .map((categoria, index) => ({ id: index + 1, nombre: categoria }));
+  private agruparDocumentosPorDepartamento(departamentos: Departamento[]): { departamento: string, documentosPorCategoria: DocumentoPorCategoria[] }[] {
+    const documentosPorDepartamento: { departamento: string, documentosPorCategoria: DocumentoPorCategoria[] }[] = [];
+
+    departamentos.forEach((departamento) => {
+      const documentosPorCategoria: DocumentoPorCategoria[] = [];
+
+      departamento.documentos.forEach((documento) => {
+        const existingCategoria = documentosPorCategoria.find((catDoc) => catDoc.categoria === documento.categoria_nombre);
+        if (existingCategoria) {
+          existingCategoria.documentos.push(documento);
+        } else {
+          documentosPorCategoria.push({ categoria: documento.categoria_nombre, documentos: [documento] });
+        }
+      });
+
+      documentosPorDepartamento.push({ departamento: departamento.nombre, documentosPorCategoria: documentosPorCategoria });
+    });
+
+    return documentosPorDepartamento;
+  }
+
+  getCategoriaNombre(categoriaId: number) {
+    // Lógica para obtener el nombre de la categoría según el ID
   }
 }

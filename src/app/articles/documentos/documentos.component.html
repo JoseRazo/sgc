@@ -1,26 +1,40 @@
 <app-header></app-header>
 <div id="banner-area">
-  <!-- Tu contenido del banner -->
-</div>
+  <img src="assets/images/banner/banner1-header-article.png" alt="" />
+  <div class="parallax-overlay"></div>
+  <!-- Subpage title start -->
+  <div class="banner-title-content">
+    <div class="text-center">
+      <h2>Documentos</h2>
+      <ul class="breadcrumb">
+        <li><a href="./">Inicio</a></li>
+        <li>Gestión de Calidad</li>
+        <li>Documentos</li>
+      </ul>
+    </div>
+  </div><!-- Subpage title end -->
+</div><!-- Banner area end -->
 
 <section id="main-container">
   <div class="container">
     <div class="row">
-      <div class="col-12" *ngFor="let departamento of departamentos">
+      <div class="col-12" *ngFor="let departamento of documentosPorDepartamento">
+
         <!-- Panel Rectoría-->
-        <h3 class="title-border mt-5">{{ departamento.nombre }}</h3>
+        <h3 class="title-border mt-5">{{ departamento.departamento }}</h3>
+
         <!-- Procedimientos-->
         <div class="panel-group" id="accordion">
-          <!-- Iterar sobre las categorías únicas -->
-          <div class="panel panel-default" *ngFor="let categoria of getCategorias(departamento.documentos)">
+          <div class="panel panel-default" *ngFor="let categoriaDocumento of departamento.documentosPorCategoria">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" class="collapsed" data-parent="#accordion"
-                  [href]="'#collapse' + categoria.id">{{ categoria.nombre }}</a>
+                  [href]="'#collapse' + categoriaDocumento.categoria">
+                  {{ categoriaDocumento.categoria }}
+                </a>
               </h4>
             </div>
-            <!-- Mostrar los documentos de la categoría en este panel -->
-            <div [id]="'collapse' + categoria.id" class="panel-collapse collapse">
+            <div [id]="'collapse' + categoriaDocumento.categoria" class="panel-collapse collapse">
               <div class="panel-body">
                 <table class="table">
                   <thead class="thead-dark">
@@ -33,14 +47,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- Filtrar y mostrar documentos de la categoría actual -->
-                    <tr *ngFor="let documento of departamento.documentos | filterByCategoria: categoria.id">
+                    <tr *ngFor="let documento of categoriaDocumento.documentos">
                       <th scope="row">{{ documento.nombre }}</th>
                       <td>{{ documento.codigo }}</td>
                       <td>{{ documento.revision }}</td>
                       <td>{{ documento.fecha }}</td>
-                      <td><a class="text-highlight" [href]="documento.archivo" target="_blank" title="{{ documento.nombre }}">
-                          <img src="assets/images/pdf.jpg" alt=""></a></td>
+                      <td>
+                        <a class="text-highlight" [href]="documento.archivo" target="_blank" title="{{ documento.nombre }}">
+                          <img src="assets/images/pdf.jpg" alt="">
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -49,14 +65,18 @@
           </div>
         </div>
         <!--/ Panel Rectoría end-->
+
       </div>
       <!--/ Accordion end -->
+
     </div>
   </div>
   <!--/ row end -->
+
   <!--/ container end -->
 </section>
 <!--/ Main container end -->
+
 
 <div class="gap-40"></div>
 
